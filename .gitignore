@@ -1,0 +1,11 @@
+.DS_Store
+DeezerExerciseSwiftUI/.DS_Store
+DeezerExerciseSwiftUI/ViewModel/.DS_Store
+DeezerExerciseSwiftUI/View/.DS_Store
+DeezerExerciseSwiftUI/Model/.DS_Store
+DeezerExerciseSwiftUI/Supporting Files/.DS_Store
+
+
+*.xcuserstate
+DeezerExerciseSwiftUI.xcodeproj/project.xcworkspace/
+DeezerExerciseSwiftUI.xcodeproj/xcuserdata/
