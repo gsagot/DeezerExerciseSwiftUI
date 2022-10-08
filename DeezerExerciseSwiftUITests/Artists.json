@@ -1,0 +1,81 @@
+{
+    "data": [
+        {
+            "id": 69925,
+            "name": "P!nk",
+            "link": "http://www.deezer.com/artist/69925",
+            "picture": "http://api.deezer.com/artist/69925/image",
+            "picture_small": "http://e-cdn-images.dzcdn.net/images/artist/874ede04c616a86dcaf793aa3283ca63/56x56-000000-80-0-0.jpg",
+            "picture_medium": "http://e-cdn-images.dzcdn.net/images/artist/874ede04c616a86dcaf793aa3283ca63/250x250-000000-80-0-0.jpg",
+            "picture_big": "http://e-cdn-images.dzcdn.net/images/artist/874ede04c616a86dcaf793aa3283ca63/500x500-000000-80-0-0.jpg",
+            "picture_xl": "http://e-cdn-images.dzcdn.net/images/artist/874ede04c616a86dcaf793aa3283ca63/1000x1000-000000-80-0-0.jpg",
+            "nb_album": 55,
+            "nb_fan": 3848781,
+            "radio": true,
+            "tracklist": "http://api.deezer.com/artist/69925/top?limit=50",
+            "type": "artist"
+        },
+        {
+            "id": 860,
+            "name": "Pink Floyd",
+            "link": "http://www.deezer.com/artist/860",
+            "picture": "http://api.deezer.com/artist/860/image",
+            "picture_small": "http://e-cdn-images.dzcdn.net/images/artist/b4f3b167b3ea91f2fe43bf4bae7cc272/56x56-000000-80-0-0.jpg",
+            "picture_medium": "http://e-cdn-images.dzcdn.net/images/artist/b4f3b167b3ea91f2fe43bf4bae7cc272/250x250-000000-80-0-0.jpg",
+            "picture_big": "http://e-cdn-images.dzcdn.net/images/artist/b4f3b167b3ea91f2fe43bf4bae7cc272/500x500-000000-80-0-0.jpg",
+            "picture_xl": "http://e-cdn-images.dzcdn.net/images/artist/b4f3b167b3ea91f2fe43bf4bae7cc272/1000x1000-000000-80-0-0.jpg",
+            "nb_album": 85,
+            "nb_fan": 5679857,
+            "radio": true,
+            "tracklist": "http://api.deezer.com/artist/860/top?limit=50",
+            "type": "artist"
+        },
+        {
+            "id": 1074,
+            "name": "Pink Martini",
+            "link": "http://www.deezer.com/artist/1074",
+            "picture": "http://api.deezer.com/artist/1074/image",
+            "picture_small": "http://e-cdn-images.dzcdn.net/images/artist/74782c4ce3554eecdebbd82c27836b15/56x56-000000-80-0-0.jpg",
+            "picture_medium": "http://e-cdn-images.dzcdn.net/images/artist/74782c4ce3554eecdebbd82c27836b15/250x250-000000-80-0-0.jpg",
+            "picture_big": "http://e-cdn-images.dzcdn.net/images/artist/74782c4ce3554eecdebbd82c27836b15/500x500-000000-80-0-0.jpg",
+            "picture_xl": "http://e-cdn-images.dzcdn.net/images/artist/74782c4ce3554eecdebbd82c27836b15/1000x1000-000000-80-0-0.jpg",
+            "nb_album": 21,
+            "nb_fan": 89489,
+            "radio": true,
+            "tracklist": "http://api.deezer.com/artist/1074/top?limit=50",
+            "type": "artist"
+        },
+        {
+            "id": 15320551,
+            "name": "Pink Sweat$",
+            "link": "http://www.deezer.com/artist/15320551",
+            "picture": "http://api.deezer.com/artist/15320551/image",
+            "picture_small": "http://e-cdn-images.dzcdn.net/images/artist/755b91232a489b03a7eec449ed7e6a0a/56x56-000000-80-0-0.jpg",
+            "picture_medium": "http://e-cdn-images.dzcdn.net/images/artist/755b91232a489b03a7eec449ed7e6a0a/250x250-000000-80-0-0.jpg",
+            "picture_big": "http://e-cdn-images.dzcdn.net/images/artist/755b91232a489b03a7eec449ed7e6a0a/500x500-000000-80-0-0.jpg",
+            "picture_xl": "http://e-cdn-images.dzcdn.net/images/artist/755b91232a489b03a7eec449ed7e6a0a/1000x1000-000000-80-0-0.jpg",
+            "nb_album": 36,
+            "nb_fan": 37200,
+            "radio": true,
+            "tracklist": "http://api.deezer.com/artist/15320551/top?limit=50",
+            "type": "artist"
+        },
+        {
+            "id": 135187942,
+            "name": "Pink Lily",
+            "link": "http://www.deezer.com/artist/135187942",
+            "picture": "http://api.deezer.com/artist/135187942/image",
+            "picture_small": "http://e-cdn-images.dzcdn.net/images/artist/a5e0ffc7febc739469e440d09e1c3679/56x56-000000-80-0-0.jpg",
+            "picture_medium": "http://e-cdn-images.dzcdn.net/images/artist/a5e0ffc7febc739469e440d09e1c3679/250x250-000000-80-0-0.jpg",
+            "picture_big": "http://e-cdn-images.dzcdn.net/images/artist/a5e0ffc7febc739469e440d09e1c3679/500x500-000000-80-0-0.jpg",
+            "picture_xl": "http://e-cdn-images.dzcdn.net/images/artist/a5e0ffc7febc739469e440d09e1c3679/1000x1000-000000-80-0-0.jpg",
+            "nb_album": 9,
+            "nb_fan": 4269,
+            "radio": true,
+            "tracklist": "http://api.deezer.com/artist/135187942/top?limit=50",
+            "type": "artist"
+        }
+    ],
+    "total": 313,
+    "next": "http://api.deezer.com/search/artist?q=pink&limit=5&index=5"
+}
