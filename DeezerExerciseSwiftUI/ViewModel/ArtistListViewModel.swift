@@ -11,15 +11,15 @@ class ArtistListViewModel:ObservableObject {
     
     @Published var all = [DZRArtist]()
     
-    let apiRequester: Requester
+    let apiRequester: ArtistRequester
     
-    init(requester: Requester = ApiRequester()) {
+    init(requester: ArtistRequester = ArtisteService()) {
         self.apiRequester = requester
     }
     
     func search(_ searchText: String ) {
         
-        guard searchText.count > 3 else { return }
+        guard searchText.count >= 3 else { return }
         
         let requestURL = URL(string: "http://api.deezer.com/search/artist?q=" + searchText)!
         

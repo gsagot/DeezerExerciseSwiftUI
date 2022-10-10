@@ -49,7 +49,7 @@ class ApiRequesterTests: XCTestCase {
         configuration.protocolClasses = [URLProtocolFake.self]
         
         let session = URLSession(configuration: configuration)
-        let apiService = ApiRequester(session: session)
+        let apiService = ArtisteService(session: session)
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")
@@ -78,7 +78,7 @@ class ApiRequesterTests: XCTestCase {
         configuration.protocolClasses = [URLProtocolFake.self]
         
         let session = URLSession(configuration: configuration)
-        let apiService = ApiRequester(session: session)
+        let apiService = ArtisteService(session: session)
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")
@@ -107,7 +107,7 @@ class ApiRequesterTests: XCTestCase {
         configuration.protocolClasses = [URLProtocolFake.self]
         
         let session = URLSession(configuration: configuration)
-        let apiService = ApiRequester(session: session)
+        let apiService = ArtisteService(session: session)
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")

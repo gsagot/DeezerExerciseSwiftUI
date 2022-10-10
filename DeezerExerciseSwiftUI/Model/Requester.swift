@@ -9,6 +9,14 @@ import Foundation
 
 // MARK: - REQUESTER PROTOCOL
 
-protocol Requester {
-    func searchArtist(url: URL, completion: @escaping (Bool, Artists?) -> ())
+protocol ArtistRequester {
+    func searchArtist(url: URL, completion: @escaping (Bool, ArtistList?) -> Void)
+}
+
+protocol TrackRequester {
+    func getArtistTopTracks(url: URL, completion: @escaping (Result<TrackList,ServiceError>) -> Void)
+}
+
+protocol AlbumDetailRequester {
+    func getAlbumDetail(url: URL, completion: @escaping (Result<AlbumDetail,ServiceError>) -> Void)
 }

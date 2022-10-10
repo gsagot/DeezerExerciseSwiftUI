@@ -10,44 +10,63 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var artistList = ArtistListViewModel()
+    @ObservedObject var viewModel = ArtistListViewModel()
     
-    @State var detail: DZRArtist = DZRArtist.mock()
-    @State var searchText: String = " "
-    @State var openDetails: Bool = false
-    let columns = [GridItem(.adaptive(minimum: 60))]
-
+    @State private var detail: DZRArtist?
+    @State private var searchText: String = " "
+    @State  private var openDetails: Bool = false
+    
+    let gridItem:[GridItem] = [GridItem(.adaptive(minimum: 100, maximum: 200))]
+    
     var body: some View {
         NavigationView {
-            LazyVGrid(columns: columns) {
-                ForEach(artistList.all, id: \.identifier) { artist in
-                    Button {
-                        openDetails = true
-                        detail = artist
-                    } label: {
-                        VStack {
-                            //Text(artist.picture) 
-                            Text(artist.name)
+            ScrollView {
+                LazyVGrid(columns: gridItem) {
+                    ForEach(viewModel.all, id: \.identifier) { artist in
+                        Button {
+                            openDetails = true
+                            detail = artist
+                            
+                            
+                        } label: {
+                            ZStack(alignment: .bottom){
+                                AsyncImage(url: URL(string: artist.picture ) ){ phase in
+                                    switch phase {
+                                    case .success(let image):
+                                        image.resizable()
+                                        
+                                    case .failure(_):
+                                        Image(systemName: "questionmark")
+                                            .symbolVariant(.circle)
+                                            .font(.largeTitle)
+                                    default:
+                                        ProgressView()
+                                    }
+                                    
+                                }
+                                .frame(width: 100, height: 100)
+                                
+                                Text(artist.name)
+                            }
                         }
                     }
                 }
                 NavigationLink(" ", isActive: $openDetails) {
-                    ArtistDetailsView(artist: detail)
+                    AlbumInfoView(artist: detail ?? DZRArtist.mock())
                 }
-                
-            }.navigationTitle("Discover new Artists")
-        }
-        .searchable(text: $searchText)
-        .onChange(of: searchText) { searchText in
-            artistList.search(searchText.trimmedAndEscaped())
-        }
-        
-        /*
-        .onChange(of: searchText) { searchText in
-            search(searchText) {
-                artists = $0
             }
-        }
-         */
-    }
-}
+            .navigationTitle("Discover new Artists")
+            .searchable(text: $searchText)
+            .onChange(of: searchText) { searchText in
+                viewModel.search(searchText.trimmedAndEscaped())
+            }
+            
+            
+        }// End Nav
+        
+    }// End Body
+    
+}// End Struct
+
+
+
