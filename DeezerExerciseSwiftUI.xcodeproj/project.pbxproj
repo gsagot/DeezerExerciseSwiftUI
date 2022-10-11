@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22B4BDF52756708A005F25D9 /* DeezerExerciseSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4BDF42756708A005F25D9 /* DeezerExerciseSwiftUIApp.swift */; };
-		22B4BDF72756708A005F25D9 /* ArtistGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4BDF62756708A005F25D9 /* ArtistGridView.swift */; };
+		22B4BDF72756708A005F25D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4BDF62756708A005F25D9 /* ContentView.swift */; };
 		22B4BDF92756708D005F25D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B4BDF82756708D005F25D9 /* Assets.xcassets */; };
 		22B4BDFC2756708D005F25D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B4BDFB2756708D005F25D9 /* Preview Assets.xcassets */; };
 		22B4BE102756708D005F25D9 /* DeezerExerciseSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4BE0F2756708D005F25D9 /* DeezerExerciseSwiftUIUITests.swift */; };
@@ -32,6 +32,12 @@
 		CA66A55428F40E38004A6851 /* AlbumDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66A55328F40E38004A6851 /* AlbumDetailService.swift */; };
 		CA98AB9928F41C6A00A62074 /* AlbumTrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA98AB9828F41C6A00A62074 /* AlbumTrackListView.swift */; };
 		CA98AB9B28F469A900A62074 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA98AB9A28F469A900A62074 /* ServiceError.swift */; };
+		CA98ABA328F5DA4200A62074 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA98ABA228F5DA4200A62074 /* Font+Extension.swift */; };
+		CADB545628F5E58200850554 /* MabryDeezer-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA98ABA028F5D94200A62074 /* MabryDeezer-Black.ttf */; };
+		CADB545728F5E58200850554 /* MabryDeezer-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA98AB9E28F5D94200A62074 /* MabryDeezer-Bold.ttf */; };
+		CADB545828F5E58200850554 /* MabryDeezer-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA98AB9D28F5D94200A62074 /* MabryDeezer-Medium.ttf */; };
+		CADB545928F5E58200850554 /* MabryDeezer-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA98ABA128F5D94200A62074 /* MabryDeezer-Regular.ttf */; };
+		CADB545A28F5E58200850554 /* MabryDeezer-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA98AB9F28F5D94200A62074 /* MabryDeezer-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +60,7 @@
 /* Begin PBXFileReference section */
 		22B4BDF12756708A005F25D9 /* DeezerExerciseSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExerciseSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B4BDF42756708A005F25D9 /* DeezerExerciseSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerExerciseSwiftUIApp.swift; sourceTree = "<group>"; };
-		22B4BDF62756708A005F25D9 /* ArtistGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistGridView.swift; sourceTree = "<group>"; };
+		22B4BDF62756708A005F25D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22B4BDF82756708D005F25D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22B4BDFB2756708D005F25D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		22B4BE012756708D005F25D9 /* DeezerExerciseSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeezerExerciseSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +69,6 @@
 		22B4BE112756708D005F25D9 /* DeezerExerciseSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerExerciseSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		22B4BE1E2756A35D005F25D9 /* AlbumInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoView.swift; sourceTree = "<group>"; };
 		283BFB0427577F1C00621AAE /* ApiRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequesterTests.swift; sourceTree = "<group>"; };
-		6D77BD3228EAD37700C89A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CA66A53128F187DF004A6851 /* ArtistListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListViewModel.swift; sourceTree = "<group>"; };
 		CA66A53828F18A2A004A6851 /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 		CA66A53A28F18A48004A6851 /* ArtisteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtisteService.swift; sourceTree = "<group>"; };
@@ -81,6 +86,13 @@
 		CA66A55328F40E38004A6851 /* AlbumDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailService.swift; sourceTree = "<group>"; };
 		CA98AB9828F41C6A00A62074 /* AlbumTrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTrackListView.swift; sourceTree = "<group>"; };
 		CA98AB9A28F469A900A62074 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		CA98AB9D28F5D94200A62074 /* MabryDeezer-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MabryDeezer-Medium.ttf"; sourceTree = "<group>"; };
+		CA98AB9E28F5D94200A62074 /* MabryDeezer-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MabryDeezer-Bold.ttf"; sourceTree = "<group>"; };
+		CA98AB9F28F5D94200A62074 /* MabryDeezer-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MabryDeezer-Light.ttf"; sourceTree = "<group>"; };
+		CA98ABA028F5D94200A62074 /* MabryDeezer-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MabryDeezer-Black.ttf"; sourceTree = "<group>"; };
+		CA98ABA128F5D94200A62074 /* MabryDeezer-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MabryDeezer-Regular.ttf"; sourceTree = "<group>"; };
+		CA98ABA228F5DA4200A62074 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		CAC08CCF28F5E3AB006C0348 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +143,8 @@
 		22B4BDF32756708A005F25D9 /* DeezerExerciseSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				6D77BD3228EAD37700C89A13 /* Info.plist */,
+				CAC08CCF28F5E3AB006C0348 /* Info.plist */,
+				CA98AB9C28F5D8F700A62074 /* Fonts */,
 				CA66A53C28F1B1E4004A6851 /* Extension */,
 				CA66A53528F1884A004A6851 /* Supporting Files */,
 				CA66A53428F1882F004A6851 /* View */,
@@ -198,7 +211,7 @@
 		CA66A53428F1882F004A6851 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				22B4BDF62756708A005F25D9 /* ArtistGridView.swift */,
+				22B4BDF62756708A005F25D9 /* ContentView.swift */,
 				22B4BE1E2756A35D005F25D9 /* AlbumInfoView.swift */,
 				CA98AB9828F41C6A00A62074 /* AlbumTrackListView.swift */,
 			);
@@ -218,9 +231,22 @@
 			isa = PBXGroup;
 			children = (
 				CA66A53D28F1B24A004A6851 /* String+Extension.swift */,
+				CA98ABA228F5DA4200A62074 /* Font+Extension.swift */,
 				CA66A54528F1E170004A6851 /* DZRArtist+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CA98AB9C28F5D8F700A62074 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CA98ABA028F5D94200A62074 /* MabryDeezer-Black.ttf */,
+				CA98AB9E28F5D94200A62074 /* MabryDeezer-Bold.ttf */,
+				CA98AB9F28F5D94200A62074 /* MabryDeezer-Light.ttf */,
+				CA98AB9D28F5D94200A62074 /* MabryDeezer-Medium.ttf */,
+				CA98ABA128F5D94200A62074 /* MabryDeezer-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,8 +353,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADB545728F5E58200850554 /* MabryDeezer-Bold.ttf in Resources */,
+				CADB545828F5E58200850554 /* MabryDeezer-Medium.ttf in Resources */,
+				CADB545928F5E58200850554 /* MabryDeezer-Regular.ttf in Resources */,
+				CADB545A28F5E58200850554 /* MabryDeezer-Light.ttf in Resources */,
 				22B4BDFC2756708D005F25D9 /* Preview Assets.xcassets in Resources */,
 				22B4BDF92756708D005F25D9 /* Assets.xcassets in Resources */,
+				CADB545628F5E58200850554 /* MabryDeezer-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,13 +392,14 @@
 				CA66A55028F30325004A6851 /* AlbumListViewModel.swift in Sources */,
 				CA66A53B28F18A48004A6851 /* ArtisteService.swift in Sources */,
 				CA66A54828F1E1B0004A6851 /* ArtistList.swift in Sources */,
-				22B4BDF72756708A005F25D9 /* ArtistGridView.swift in Sources */,
+				22B4BDF72756708A005F25D9 /* ContentView.swift in Sources */,
 				CA98AB9B28F469A900A62074 /* ServiceError.swift in Sources */,
 				CA66A55228F40D88004A6851 /* AlbumDetailViewModel.swift in Sources */,
 				CA66A55428F40E38004A6851 /* AlbumDetailService.swift in Sources */,
 				CA66A53928F18A2A004A6851 /* Requester.swift in Sources */,
 				22B4BE1F2756A35E005F25D9 /* AlbumInfoView.swift in Sources */,
 				22B4BDF52756708A005F25D9 /* DeezerExerciseSwiftUIApp.swift in Sources */,
+				CA98ABA328F5DA4200A62074 /* Font+Extension.swift in Sources */,
 				CA66A53228F187DF004A6851 /* ArtistListViewModel.swift in Sources */,
 				CA66A54628F1E170004A6851 /* DZRArtist+Extension.swift in Sources */,
 				CA66A54C28F2FED5004A6851 /* AlbumList.swift in Sources */,
@@ -538,11 +570,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeezerExerciseSwiftUI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,11 +604,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeezerExerciseSwiftUI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,34 +9,70 @@ import SwiftUI
 
 struct AlbumTrackListView: View {
     
-    var Albums:[Album]
-    
-    @State private var index: Int = 0
+    var current_album:Album
  
     @ObservedObject var viewModel = AlbumDetailViewModel()
     
     var body: some View {
         
+        Text("Album Tracks :")
+            .padding(10)
+            .foregroundColor(.white)
+            .font(.largeTitle)
+        
         switch viewModel.state {
             
         case .idle:
-            Color.clear.onAppear(){viewModel.search(Albums[index].identifier) }
+            Color.black.onAppear(){viewModel.search(current_album.identifier) }
         case .loading:
-            ProgressView()
+            VStack{
+                ProgressView()
+                Spacer()
+            }
+            
         case .failed(_):
-            Text("errreuuuurrr")
+            VStack{
+                Text("errreuuuurrr")
+                    .foregroundColor(.white)
+                Spacer()
+            }
         case .loaded(let tracks):
-            List(){
+                
+            
+            ScrollView(){
                 ForEach(tracks, id: \.identifier) { track in
-                    Text(track.title)
+                    
+                 TrackCellView(title: track.title.removeParentheses())
+                      
                 }
                 
-                
             }
+            
         }
 
     }
 }
+
+struct TrackCellView: View {
+    
+    var title: String
+    
+    var body: some View {
+        
+        HStack(){
+            Text(title.removeParentheses())
+                .multilineTextAlignment(.leading)
+            Spacer()
+        }
+        .padding(10)
+        .foregroundColor(.white)
+        .background(.clear)
+        
+    }
+    
+}
+
+
 
 /*
 struct AlbumTrackListView_Previews: PreviewProvider {

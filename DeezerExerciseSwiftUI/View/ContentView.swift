@@ -26,10 +26,10 @@ struct ContentView: View {
                         Button {
                             openDetails = true
                             detail = artist
-                            
-                            
+
                         } label: {
-                            ZStack(alignment: .bottom){
+                            VStack{
+                                
                                 AsyncImage(url: URL(string: artist.picture ) ){ phase in
                                     switch phase {
                                     case .success(let image):
@@ -45,8 +45,11 @@ struct ContentView: View {
                                     
                                 }
                                 .frame(width: 100, height: 100)
+                                .clipShape(Circle())
                                 
                                 Text(artist.name)
+                                    .foregroundColor(.white)
+                                    .font(.boldFont)
                             }
                         }
                     }
@@ -55,11 +58,14 @@ struct ContentView: View {
                     AlbumInfoView(artist: detail ?? DZRArtist.mock())
                 }
             }
+            .background(.black)
             .navigationTitle("Discover new Artists")
             .searchable(text: $searchText)
             .onChange(of: searchText) { searchText in
                 viewModel.search(searchText.trimmedAndEscaped())
             }
+           
+           
             
             
         }// End Nav

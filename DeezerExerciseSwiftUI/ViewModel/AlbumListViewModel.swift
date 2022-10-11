@@ -61,7 +61,7 @@ class AlbumListViewModel:ObservableObject {
         return Array(test)
         
     }
-    
+
     func printTest() {
         for album in albums {
             print("✅", album)
@@ -69,5 +69,6 @@ class AlbumListViewModel:ObservableObject {
         }
         
     }
+     
     
 }

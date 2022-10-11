@@ -37,7 +37,7 @@ class AlbumDetailViewModel: ObservableObject {
             switch result {
             case .success(let tracks) :
                 self.all = tracks.tracks.data
-                self.printTest()
+                //self.printTest()
                 self.state = .loaded(self.all)
            
             case .failure(let error) :
@@ -53,6 +53,7 @@ class AlbumDetailViewModel: ObservableObject {
         }
         
     }
-    
+     
+
     
 }
