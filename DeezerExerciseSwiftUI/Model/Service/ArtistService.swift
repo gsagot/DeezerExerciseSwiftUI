@@ -1,14 +1,13 @@
 //
-//  File.swift
+//  ApiRequester.swift
 //  DeezerExerciseSwiftUI
 //
-//  Created by Gilles Sagot on 09/10/2022.
+//  Created by Gilles Sagot on 08/10/2022.
 //
 
 import Foundation
 
-
-class TrackService: TrackRequester {
+class ArtistService: ArtistRequester {
     
     private var session = URLSession(configuration: .default)
     
@@ -22,7 +21,7 @@ class TrackService: TrackRequester {
         
     }
     
-    func getArtistTopTracks(url: URL, completion: @escaping (Result<TrackList,ServiceError>) -> Void) {
+    func searchArtist(url: URL, completion: @escaping (Bool, ArtistList?) -> Void) {
         
         let request = URLRequest(url: url)
         
@@ -34,21 +33,21 @@ class TrackService: TrackRequester {
                 
                 guard let data = data, error == nil else {
                     print ("ERROR: \(String(describing: error?.localizedDescription))")
-                    completion (.failure(.DataException))
+                    completion (false, nil)
                     return
                 }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     print ("ERROR: \(String(describing: response))")
-                    completion (.failure(.QueryException))
+                    completion (false, nil)
                     return
                 }
-                guard let result = try? JSONDecoder().decode(TrackList.self, from: data) else {
+                guard let result = try? JSONDecoder().decode(ArtistList.self, from: data) else {
                     print("JSON ERROR: \(String(describing: error?.localizedDescription))")
-                    completion (.failure(.JSONException))
+                    completion (false, nil)
                     return
                 }
-               
-                completion (.success(result))
+                
+                completion (true, result)
             }
             
         }

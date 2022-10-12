@@ -10,19 +10,19 @@ import SwiftUI
 
 // Deezer Fonts
 extension Font {
-    static let boldFont = Font.custom("MabryDeezer-Black", size: Font.TextStyle.largeTitle.size, relativeTo: .caption)
-    static let mediumFont = Font.custom("MabryDeezer-Black", size: Font.TextStyle.title2.size, relativeTo: .caption)
-    static let regularFont = Font.custom("MabryDeezer-Black", size: Font.TextStyle.headline.size, relativeTo: .caption)
-    static let lightFont = Font.custom("MabryDeezer-Black", size: Font.TextStyle.footnote.size, relativeTo: .caption)
+    static let dzrLarge = Font.custom("MabryDeezer-Black", size: Font.TextStyle.largeTitle.size, relativeTo: .caption)
+    static let dzrTitle = Font.custom("MabryDeezer-Black", size: Font.TextStyle.title2.size, relativeTo: .caption)
+    static let dzrHeadline = Font.custom("MabryDeezer-Black", size: Font.TextStyle.headline.size, relativeTo: .caption)
+    static let dzrFootnote = Font.custom("MabryDeezer-Black", size: Font.TextStyle.footnote.size, relativeTo: .caption)
 }
 
 extension Font.TextStyle {
     var size: CGFloat {
         switch self {
-        case .largeTitle: return 60
-        case .title: return 48
-        case .title2: return 34
-        case .title3: return 24
+        case .largeTitle: return 42
+        case .title: return 36
+        case .title2: return 28
+        case .title3: return 22
         case .headline, .body: return 18
         case .subheadline, .callout: return 16
         case .footnote: return 14

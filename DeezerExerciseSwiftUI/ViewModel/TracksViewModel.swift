@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AlbumDetailViewModel: ObservableObject {
+class TracksViewModel: ObservableObject {
     
     enum State {
         case idle
@@ -20,9 +20,9 @@ class AlbumDetailViewModel: ObservableObject {
     
     var all = [Track]()
     
-    let apiRequester: AlbumDetailRequester
+    var apiRequester: AlbumRequester
     
-    init(requester: AlbumDetailRequester = AlbumDetailService()) {
+    init(requester: AlbumRequester = AlbumService()) {
         self.apiRequester = requester
        
     }
@@ -33,7 +33,7 @@ class AlbumDetailViewModel: ObservableObject {
                 
         let requestURL = URL(string: "http://api.deezer.com/album/" + String(id) )!
         
-        apiRequester.getAlbumDetail(url: requestURL) {result in
+        apiRequester.get(url: requestURL) {result in
             switch result {
             case .success(let tracks) :
                 self.all = tracks.tracks.data

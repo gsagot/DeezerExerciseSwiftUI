@@ -7,13 +7,13 @@
 
 import Foundation
 
-class ArtistListViewModel:ObservableObject {
+class ArtistsViewModel:ObservableObject {
     
     @Published var all = [DZRArtist]()
     
-    let apiRequester: ArtistRequester
+    var apiRequester: ArtistRequester
     
-    init(requester: ArtistRequester = ArtisteService()) {
+    init(requester: ArtistRequester = ArtistService()) {
         self.apiRequester = requester
     }
     
@@ -30,6 +30,10 @@ class ArtistListViewModel:ObservableObject {
                 
             }
         }
+    }
+    
+    func reset() {
+        all.removeAll()
     }
     
 }

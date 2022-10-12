@@ -34,15 +34,3 @@ struct Album: Codable, Hashable {
 
     
 }
-
-struct tracks: Codable {
-    
-    let data: [Track]
-    
-}
-
-struct AlbumDetail: Codable {
-    
-    let tracks: tracks
-    
-}

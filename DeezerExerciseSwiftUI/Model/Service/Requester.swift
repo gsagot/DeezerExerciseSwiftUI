@@ -14,9 +14,9 @@ protocol ArtistRequester {
 }
 
 protocol TrackRequester {
-    func getArtistTopTracks(url: URL, completion: @escaping (Result<TrackList,ServiceError>) -> Void)
+    func get(url: URL, completion: @escaping (Result<TrackList,ServiceError>) -> Void)
 }
 
-protocol AlbumDetailRequester {
-    func getAlbumDetail(url: URL, completion: @escaping (Result<AlbumDetail,ServiceError>) -> Void)
+protocol AlbumRequester {
+    func get(url: URL, completion: @escaping (Result<AlbumDetail,ServiceError>) -> Void)
 }

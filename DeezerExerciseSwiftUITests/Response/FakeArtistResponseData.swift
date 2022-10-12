@@ -7,11 +7,11 @@
 
 import Foundation
 
-class FakeResponseData {
+class FakeArtistResponseData {
     // MARK: - DATA
     static var CorrectData: Data? {
-        let bundle = Bundle(for: FakeResponseData.self)
-        let url = bundle.url(forResource: "Artists", withExtension: "json")!
+        let bundle = Bundle(for: FakeArtistResponseData.self)
+        let url = bundle.url(forResource: "ArtistList", withExtension: "json")!
         return try! Data(contentsOf: url)
     }
 

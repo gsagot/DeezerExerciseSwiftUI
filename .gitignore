@@ -1,9 +1,11 @@
 .DS_Store
 DeezerExerciseSwiftUI/.DS_Store
+DeezerExerciseSwiftUI/Extension/.DS_Store
 DeezerExerciseSwiftUI/ViewModel/.DS_Store
 DeezerExerciseSwiftUI/View/.DS_Store
 DeezerExerciseSwiftUI/Model/.DS_Store
 DeezerExerciseSwiftUI/Supporting Files/.DS_Store
+DeezerExerciseSwiftUI/Fonts/.DS_Store
 
 
 *.xcuserstate

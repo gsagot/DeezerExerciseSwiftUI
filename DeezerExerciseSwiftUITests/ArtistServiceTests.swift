@@ -8,7 +8,7 @@ import XCTest
 
 @testable import DeezerExerciseSwiftUI
 
-class ApiRequesterTests: XCTestCase {
+class ArtistServiceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -41,7 +41,7 @@ class ApiRequesterTests: XCTestCase {
         URLProtocolFake.request = { request in
             let data: Data? = nil
             let response: HTTPURLResponse? = nil
-            let error: Error? = FakeResponseData.error
+            let error: Error? = FakeArtistResponseData.error
             return (data, response, error)
         }
         
@@ -49,7 +49,7 @@ class ApiRequesterTests: XCTestCase {
         configuration.protocolClasses = [URLProtocolFake.self]
         
         let session = URLSession(configuration: configuration)
-        let apiService = ArtisteService(session: session)
+        let apiService = ArtistService(session: session)
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")
@@ -78,7 +78,7 @@ class ApiRequesterTests: XCTestCase {
         configuration.protocolClasses = [URLProtocolFake.self]
         
         let session = URLSession(configuration: configuration)
-        let apiService = ArtisteService(session: session)
+        let apiService = ArtistService(session: session)
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")
@@ -97,8 +97,8 @@ class ApiRequesterTests: XCTestCase {
         
         // GIVEN
         URLProtocolFake.request = { request in
-            let data: Data? = FakeResponseData.CorrectData
-            let response: HTTPURLResponse? = FakeResponseData.responseOK
+            let data: Data? = FakeArtistResponseData.CorrectData
+            let response: HTTPURLResponse? = FakeArtistResponseData.responseOK
             let error: Error? = nil
             return (data, response, error)
         }
@@ -107,7 +107,7 @@ class ApiRequesterTests: XCTestCase {
         configuration.protocolClasses = [URLProtocolFake.self]
         
         let session = URLSession(configuration: configuration)
-        let apiService = ArtisteService(session: session)
+        let apiService = ArtistService(session: session)
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")

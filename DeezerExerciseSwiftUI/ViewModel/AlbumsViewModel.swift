@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AlbumListViewModel:ObservableObject {
+class AlbumsViewModel:ObservableObject {
     
     enum State {
         case idle
@@ -22,7 +22,7 @@ class AlbumListViewModel:ObservableObject {
 
     private var all = [Track]()
     
-    let apiRequester: TrackRequester
+    var apiRequester: TrackRequester
     
     init(requester: TrackRequester = TrackService()) {
         self.apiRequester = requester
@@ -34,7 +34,7 @@ class AlbumListViewModel:ObservableObject {
         
         let requestURL = URL(string: url)!
         
-        apiRequester.getArtistTopTracks(url: requestURL) {result in
+        apiRequester.get(url: requestURL) {result in
             switch result {
                 
             case .success(let tracks) :

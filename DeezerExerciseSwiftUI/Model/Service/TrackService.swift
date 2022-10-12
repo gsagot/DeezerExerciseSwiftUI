@@ -1,13 +1,14 @@
 //
-//  AlbumService.swift
+//  File.swift
 //  DeezerExerciseSwiftUI
 //
-//  Created by Gilles Sagot on 10/10/2022.
+//  Created by Gilles Sagot on 09/10/2022.
 //
 
 import Foundation
 
-class AlbumDetailService: AlbumDetailRequester {
+
+class TrackService: TrackRequester {
     
     private var session = URLSession(configuration: .default)
     
@@ -21,7 +22,7 @@ class AlbumDetailService: AlbumDetailRequester {
         
     }
     
-    func getAlbumDetail(url: URL, completion: @escaping (Result<AlbumDetail,ServiceError>) -> Void) {
+    func get(url: URL, completion: @escaping (Result<TrackList,ServiceError>) -> Void) {
         
         let request = URLRequest(url: url)
         
@@ -41,12 +42,12 @@ class AlbumDetailService: AlbumDetailRequester {
                     completion (.failure(.QueryException))
                     return
                 }
-                guard let result = try? JSONDecoder().decode(AlbumDetail.self, from: data) else {
+                guard let result = try? JSONDecoder().decode(TrackList.self, from: data) else {
                     print("JSON ERROR: \(String(describing: error?.localizedDescription))")
                     completion (.failure(.JSONException))
                     return
                 }
-              
+               
                 completion (.success(result))
             }
             

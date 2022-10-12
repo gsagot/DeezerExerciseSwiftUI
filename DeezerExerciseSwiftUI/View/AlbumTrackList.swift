@@ -7,26 +7,29 @@
 
 import SwiftUI
 
-struct AlbumTrackListView: View {
+struct AlbumTrackList: View {
     
     var current_album:Album
  
-    @ObservedObject var viewModel = AlbumDetailViewModel()
+    @ObservedObject var viewModel = TracksViewModel()
     
     var body: some View {
-        
-        Text("Album Tracks :")
-            .padding(10)
-            .foregroundColor(.white)
-            .font(.largeTitle)
-        
+
         switch viewModel.state {
             
         case .idle:
-            Color.black.onAppear(){viewModel.search(current_album.identifier) }
+            Color.clear.onAppear(){viewModel.search(current_album.identifier) }
         case .loading:
             VStack{
-                ProgressView()
+                
+                Spacer()
+                
+                HStack{
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }
+                
                 Spacer()
             }
             
@@ -37,12 +40,10 @@ struct AlbumTrackListView: View {
                 Spacer()
             }
         case .loaded(let tracks):
-                
-            
-            ScrollView(){
+            List(){
                 ForEach(tracks, id: \.identifier) { track in
                     
-                 TrackCellView(title: track.title.removeParentheses())
+                    TrackCell(title: track.title.removeParentheses())
                       
                 }
                 
@@ -51,25 +52,6 @@ struct AlbumTrackListView: View {
         }
 
     }
-}
-
-struct TrackCellView: View {
-    
-    var title: String
-    
-    var body: some View {
-        
-        HStack(){
-            Text(title.removeParentheses())
-                .multilineTextAlignment(.leading)
-            Spacer()
-        }
-        .padding(10)
-        .foregroundColor(.white)
-        .background(.clear)
-        
-    }
-    
 }
 
 
