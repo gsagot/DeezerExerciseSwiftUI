@@ -20,7 +20,7 @@ class TracksViewModel: ObservableObject {
     
     var all = [Track]()
     
-    var apiRequester: AlbumRequester
+    private var apiRequester: AlbumRequester
     
     init(requester: AlbumRequester = AlbumService()) {
         self.apiRequester = requester

@@ -8,25 +8,53 @@
 import Foundation
 import SwiftUI
 
+class UserSettings: ObservableObject {
+    @Published var score:Int = 0
+}
 
 struct TrackCell: View {
+
+    var track: Track
     
-    var title: String
+    @Binding var listening: Track?
+    
+    @State var selected: Bool = false
+    
+    @ObservedObject var audioPlayer = AudioPlayer.shared
+    
     
     var body: some View {
         
         HStack(){
             
-            Text(title.removeParentheses())
-                .font(.dzrFootnote)
+            Text(track.title.removeParentheses())
+                .bold()
                 .multilineTextAlignment(.leading)
             Spacer()
-            Image(systemName: "play")
+            
+            switch audioPlayer.state {
+                
+            case .playing :
+                
+                if listening?.identifier != track.identifier {
+                    Text( "▷" )
+                }
+                else {
+                    Text( "◻︎" )
+                }
+            default :
+                    Text( "▷" )
+                
+            }
+
         }
         .padding(10)
         .foregroundColor(.black)
         .background(.clear)
         
+        
+        
     }
+
     
 }

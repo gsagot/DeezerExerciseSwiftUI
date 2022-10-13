@@ -11,7 +11,7 @@ class ArtistsViewModel:ObservableObject {
     
     @Published var all = [DZRArtist]()
     
-    var apiRequester: ArtistRequester
+    private var apiRequester: ArtistRequester
     
     init(requester: ArtistRequester = ArtistService()) {
         self.apiRequester = requester

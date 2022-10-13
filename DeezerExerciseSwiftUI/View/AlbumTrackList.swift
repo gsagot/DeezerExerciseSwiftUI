@@ -10,6 +10,8 @@ import SwiftUI
 struct AlbumTrackList: View {
     
     var current_album:Album
+    
+    @State private var selected: Track?
  
     @ObservedObject var viewModel = TracksViewModel()
     
@@ -42,24 +44,41 @@ struct AlbumTrackList: View {
         case .loaded(let tracks):
             List(){
                 ForEach(tracks, id: \.identifier) { track in
+
+                    TrackCell(track: track, listening: $selected)
+                        .onTapGesture {
+                            switch AudioPlayer.shared.state {
+                                
+                            case .playing :
+                                
+                                if selected?.identifier != track.identifier {
+                                    AudioPlayer.shared.start(track.preview)
+                                    selected = track
+                                }
+                                else{
+                                    AudioPlayer.shared.stop()
+                                    selected = nil
+                                }
+                                
+                            default :
+                                AudioPlayer.shared.start(track.preview)
+                                selected = track
+                            }
+
+                          
+                        }
                     
-                    TrackCell(title: track.title.removeParentheses())
+                    
                       
                 }
+            
                 
             }
+           
+            
             
         }
 
     }
 }
 
-
-
-/*
-struct AlbumTrackListView_Previews: PreviewProvider {
-    static var previews: some View {
-        AlbumTrackListView()
-    }
-}
-*/

@@ -20,3 +20,7 @@ protocol TrackRequester {
 protocol AlbumRequester {
     func get(url: URL, completion: @escaping (Result<AlbumDetail,ServiceError>) -> Void)
 }
+
+protocol PreviewRequester {
+    func getAudioFile(url: URL, completion: @escaping (Result<URL,Error>) -> Void)
+}
