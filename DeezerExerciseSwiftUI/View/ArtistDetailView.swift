@@ -78,7 +78,6 @@ struct ArtistDetailView: View {
                         .background(.clear)
                     
                 }
-                .background(.white)
                 .modifier(BackNavigationButton())
                 
         }
@@ -103,9 +102,9 @@ struct BackNavigationButton: ViewModifier {
                 HStack {
                     Image(systemName: "chevron.backward.square.fill")
                     
-                    Text ("Back ✎ ")
+                    Text ("Back")
                 }
-                .foregroundColor(.black)
+                
             })
     }
 }

@@ -39,7 +39,7 @@ struct ArtistGridView: View {
                     }
                 }
             
-        .background(.white)
+        
         
     }
 }

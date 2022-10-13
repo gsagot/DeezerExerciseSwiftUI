@@ -49,7 +49,6 @@ struct TrackCell: View {
 
         }
         .padding(10)
-        .foregroundColor(.black)
         .background(.clear)
         
         

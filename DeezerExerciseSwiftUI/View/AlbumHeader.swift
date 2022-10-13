@@ -22,7 +22,6 @@ struct AlbumHeader: View {
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                     .font(.dzrLarge)
                     .minimumScaleFactor(0.5)
-                    .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
                 
                 
