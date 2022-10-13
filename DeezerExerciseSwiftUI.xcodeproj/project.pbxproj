@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22B4BDF52756708A005F25D9 /* DeezerExerciseSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4BDF42756708A005F25D9 /* DeezerExerciseSwiftUIApp.swift */; };
-		22B4BDF72756708A005F25D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4BDF62756708A005F25D9 /* ContentView.swift */; };
+		22B4BDF72756708A005F25D9 /* ArtistSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4BDF62756708A005F25D9 /* ArtistSearchView.swift */; };
 		22B4BDF92756708D005F25D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B4BDF82756708D005F25D9 /* Assets.xcassets */; };
 		22B4BDFC2756708D005F25D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B4BDFB2756708D005F25D9 /* Preview Assets.xcassets */; };
 		22B4BE102756708D005F25D9 /* DeezerExerciseSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4BE0F2756708D005F25D9 /* DeezerExerciseSwiftUIUITests.swift */; };
@@ -75,7 +75,7 @@
 /* Begin PBXFileReference section */
 		22B4BDF12756708A005F25D9 /* DeezerExerciseSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExerciseSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B4BDF42756708A005F25D9 /* DeezerExerciseSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerExerciseSwiftUIApp.swift; sourceTree = "<group>"; };
-		22B4BDF62756708A005F25D9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		22B4BDF62756708A005F25D9 /* ArtistSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchView.swift; sourceTree = "<group>"; };
 		22B4BDF82756708D005F25D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22B4BDFB2756708D005F25D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		22B4BE012756708D005F25D9 /* DeezerExerciseSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeezerExerciseSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +250,26 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		CA070F8328F8A22400A35DC8 /* ArtistSearch */ = {
+			isa = PBXGroup;
+			children = (
+				CA070F7428F8117900A35DC8 /* ArtistGridView.swift */,
+				CA070F7628F814C400A35DC8 /* ArtistGridCellView.swift */,
+			);
+			path = ArtistSearch;
+			sourceTree = "<group>";
+		};
+		CA070F8428F8A24A00A35DC8 /* ArtistDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CA070F5F28F6F7A600A35DC8 /* AlbumHeader.swift */,
+				CA070F6128F6F7D800A35DC8 /* AlbumCover.swift */,
+				CA98AB9828F41C6A00A62074 /* AlbumTrackList.swift */,
+				CA070F6328F6F8AD00A35DC8 /* TrackCell.swift */,
+			);
+			path = ArtistDetail;
+			sourceTree = "<group>";
+		};
 		CA66A53028F187D0004A6851 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,14 +296,10 @@
 		CA66A53428F1882F004A6851 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				22B4BDF62756708A005F25D9 /* ContentView.swift */,
-				CA070F7428F8117900A35DC8 /* ArtistGridView.swift */,
-				CA070F7628F814C400A35DC8 /* ArtistGridCellView.swift */,
+				22B4BDF62756708A005F25D9 /* ArtistSearchView.swift */,
+				CA070F8328F8A22400A35DC8 /* ArtistSearch */,
 				22B4BE1E2756A35D005F25D9 /* ArtistDetailView.swift */,
-				CA070F6128F6F7D800A35DC8 /* AlbumCover.swift */,
-				CA070F5F28F6F7A600A35DC8 /* AlbumHeader.swift */,
-				CA98AB9828F41C6A00A62074 /* AlbumTrackList.swift */,
-				CA070F6328F6F8AD00A35DC8 /* TrackCell.swift */,
+				CA070F8428F8A24A00A35DC8 /* ArtistDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -465,7 +481,7 @@
 				CA66A53B28F18A48004A6851 /* ArtistService.swift in Sources */,
 				CA070F6228F6F7D800A35DC8 /* AlbumCover.swift in Sources */,
 				CA66A54828F1E1B0004A6851 /* ArtistList.swift in Sources */,
-				22B4BDF72756708A005F25D9 /* ContentView.swift in Sources */,
+				22B4BDF72756708A005F25D9 /* ArtistSearchView.swift in Sources */,
 				CA98AB9B28F469A900A62074 /* ServiceError.swift in Sources */,
 				CA66A55228F40D88004A6851 /* TracksViewModel.swift in Sources */,
 				CA66A55428F40E38004A6851 /* AlbumService.swift in Sources */,

@@ -12,7 +12,7 @@ import SwiftUI
 struct DeezerExerciseSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArtistSearchView()
         }
     }
 }

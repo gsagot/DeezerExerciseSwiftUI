@@ -39,9 +39,11 @@ struct ArtistGridCellView: View {
                 
                 Text(artist.name)
                     .foregroundColor(.white)
-                    .font(.dzrHeadline)
+                    .bold()
+                    .minimumScaleFactor(0.5)
                 Spacer()
             }
+            .frame(height: 30)
             .padding(5)
             .background(.pink)
             
