@@ -62,7 +62,7 @@ final class TrackServiceTests: XCTestCase {
             case .success(_):
                 break
             case .failure(let error):
-                XCTAssertEqual(error, .DataException)
+                XCTAssertEqual(error, .DataException("No Data, please check your Internet connection") )
             }
             
             expectation.fulfill()
@@ -97,7 +97,7 @@ final class TrackServiceTests: XCTestCase {
             case .success(_):
                 break
             case .failure(let error):
-                XCTAssertEqual(error, .DataException)
+                XCTAssertEqual(error, .DataException("No Data, please check your Internet connection") )
             }
        
             expectation.fulfill()

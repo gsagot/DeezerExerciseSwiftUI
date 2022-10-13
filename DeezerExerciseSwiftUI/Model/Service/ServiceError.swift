@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum ServiceError: Error {
-    case DataException
-    case QueryException
-    case JSONException
+enum ServiceError: Error, Equatable {
+    case DataException (String)
+    case QueryException (String)
+    case JSONException (String)
 }

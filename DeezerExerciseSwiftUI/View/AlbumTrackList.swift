@@ -35,10 +35,11 @@ struct AlbumTrackList: View {
                 Spacer()
             }
             
-        case .failed(_):
+        case .failed(let error):
             VStack{
-                Text("errreuuuurrr")
-                    .foregroundColor(.white)
+                Text((String(describing: error) ) )
+                    .font(.dzrFootnote)
+                    .foregroundColor(.red)
                 Spacer()
             }
         case .loaded(let tracks):

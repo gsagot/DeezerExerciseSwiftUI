@@ -19,7 +19,7 @@ struct AlbumHeader: View {
             
             VStack(alignment: .leading ){
                 Text(artistName)
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 0))
                     .font(.dzrLarge)
                     .minimumScaleFactor(0.5)
                     .multilineTextAlignment(.leading)

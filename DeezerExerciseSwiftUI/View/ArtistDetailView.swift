@@ -28,10 +28,23 @@ struct ArtistDetailView: View {
                 .modifier(BackNavigationButton())
             
         case .loading:
-            ProgressView()
+            VStack{
+                
+                Spacer()
+                
+                HStack{
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }
+                
+                Spacer()
+            }
             
-        case .failed(_):
-            Text("errreuuuurrr")
+        case .failed(let error):
+            Text((String(describing: error)))
+                .font(.dzrFootnote)
+                .foregroundColor(.red)
             
         case .loaded(let albums):
             
