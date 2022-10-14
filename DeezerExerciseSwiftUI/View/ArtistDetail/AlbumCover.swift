@@ -21,6 +21,11 @@ struct AlbumCover: View {
                 .scaledToFill()
                 .scaleEffect(1.6)
             
+            Image("clock")
+                .resizable()
+                .scaledToFill()
+                .scaleEffect(1.2)
+            
             AsyncImage(url: URL(string: path) ){ phase in
                 switch phase {
                 case .success(let image):

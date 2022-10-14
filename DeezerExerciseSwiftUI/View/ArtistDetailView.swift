@@ -60,7 +60,10 @@ struct ArtistDetailView: View {
                                 .frame(width: geo.size.height, height: geo.size.height)
                                 .rotationEffect(.degrees(rotation))
                                 .animation(.easeIn, value: rotation)
+                            
+                                // Rotation animation when user switch between albums
                                 .gesture(
+                            
                                     DragGesture()
                                         .onEnded { gesture in
                                             let offset = gesture.translation.height
