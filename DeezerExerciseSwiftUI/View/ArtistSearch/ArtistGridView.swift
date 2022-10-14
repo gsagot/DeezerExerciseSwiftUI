@@ -32,12 +32,14 @@ struct ArtistGridView: View {
                         
                             ArtistGridCellView(artist: artist)
                             
-                            NavigationLink(" ", isActive: $openDetails) {
-                                ArtistDetailView(artist: detail ?? DZRArtist.mock())
-                            }
+                        
                         }
                     }
+                
                 }
+        NavigationLink(" ", isActive: $openDetails) {
+            ArtistDetailView(artist: detail ?? DZRArtist.mock())
+        }
             
         
         

@@ -45,3 +45,42 @@ final class URLProtocolFake: URLProtocol {
     }
 
 }
+
+final class URLProtocolFakeDownload: URLProtocol {
+    
+    static var request: ((URLRequest) -> ( URL?, HTTPURLResponse?, Error?))?
+    
+    override class func canInit(with request: URLRequest) -> Bool {
+        return true
+    }
+
+    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+        return request
+    }
+
+    override func startLoading() {
+        guard let result = URLProtocolFakeDownload.request else {
+            return
+        }
+        let (_, response, _) = result(request)
+
+        if let responseStrong = response {
+            client?.urlProtocol(self, didReceive: responseStrong, cacheStoragePolicy: .notAllowed)
+            
+        }
+        else {
+            class ProtocolError: Error {}
+            let protocolError = ProtocolError()
+            client?.urlProtocol(self, didFailWithError: protocolError)
+        }
+
+        client?.urlProtocolDidFinishLoading(self)
+  
+    }
+    
+    override func stopLoading() {
+    }
+
+}
+
+

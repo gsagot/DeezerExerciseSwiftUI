@@ -7,7 +7,14 @@
 
 import XCTest
 
+@testable import DeezerExerciseSwiftUI
+
 final class PreviewServiceTests: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
+        URLProtocol.registerClass(URLProtocolFakeDownload.self)
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,6 +39,111 @@ final class PreviewServiceTests: XCTestCase {
         }
     }
     
+    func testGetAudioFileShouldPostFailedCallbackIfError() {
+
+        // GIVEN
+        URLProtocolFakeDownload.request = { request in
+            let location: URL? = nil
+            let response: HTTPURLResponse? = nil
+            let error: Error? = FakePreviewResponseData.error
+            return (location, response, error)
+        }
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolFakeDownload.self]
+        
+        let session = URLSession(configuration: configuration)
+        let apiService = PreviewService(session: session)
+        
+        // WHEN
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        apiService.getAudioFile(url: URL(string: "https://api.deezer.com")! ){ result in
+            
+        // THEN
+            switch result {
+                
+            case .success(_):
+                break
+            case .failure(let error):
+                XCTAssertEqual(error, .DataException("No Data, please check your Internet connection") )
+            }
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1)
+ 
+    }
+    
+    func testGetAudioFileShouldPostFailedCallbackIfIncorrectResponse(){
+        
+        // GIVEN
+        URLProtocolFakeDownload.request = { request in
+            let location: URL? = FakePreviewResponseData.IncorrectLocation
+            let response: HTTPURLResponse? = FakePreviewResponseData.responseKO
+            let error: Error? = nil
+            return (location, response, error)
+        }
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolFakeDownload.self]
+        
+        let session = URLSession(configuration: configuration)
+        let apiService = PreviewService(session: session)
+        
+        // WHEN
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        apiService.getAudioFile(url: URL(string: "https://api.deezer.com")! ){ result in
+            
+            // THEN
+            switch result {
+                
+            case .success(_):
+                break
+            case .failure(let error):
+                XCTAssertEqual(error, .QueryException("Bad server response, please try again") )
+                XCTAssertFalse(error == .DataException("No Data, please check your Internet connection")  )
+            }
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1)
+        
+    }
+    
+    
+
+    
+    func testGetAudioFileShouldPostSuccessCallbackIfCorrectResponseWithData() {
+        
+        // GIVEN
+        URLProtocolFakeDownload.request = { request in
+            let location: URL? = FakePreviewResponseData.CorrectLocation
+            let response: HTTPURLResponse? = FakePreviewResponseData.responseOK
+            let error: Error? = nil
+            return (location, response, error)
+        }
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolFakeDownload.self]
+        
+        let session = URLSession(configuration: configuration)
+        let apiService = PreviewService(session: session)
+        
+        // WHEN
+        let expectation = XCTestExpectation(description: "Wait for queue change.")
+        apiService.getAudioFile (url: URL(string: "https://api.deezer.com")! ){ result in
+            
+        // THEN
+
+            XCTAssertTrue(result != .failure(.DataException("No Data, please check your Internet connection")))
+            
+            XCTAssertTrue(result != .failure(.QueryException("Bad server response, please try again")))
+         
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 1)
+
+    }
     
 
 }

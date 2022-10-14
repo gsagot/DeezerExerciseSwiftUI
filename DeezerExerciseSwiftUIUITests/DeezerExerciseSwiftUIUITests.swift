@@ -24,6 +24,13 @@ class DeezerExerciseSwiftUIUITests: XCTestCase {
 
     func testExample() throws {
         // UI tests must launch the application that they test.
-        // let app = XCUIApplication()
+        let app = XCUIApplication()
+        app.launch()
+        
+        let discoverNewArtistsNavigationBar = app.navigationBars["Discover new Artists"]
+        discoverNewArtistsNavigationBar.searchFields["Search"].tap()
+        discoverNewArtistsNavigationBar.buttons["Cancel"].tap()
+              
+                                
     }
 }

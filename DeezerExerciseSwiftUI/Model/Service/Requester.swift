@@ -10,7 +10,7 @@ import Foundation
 // MARK: - REQUESTER PROTOCOL
 
 protocol ArtistRequester {
-    func searchArtist(url: URL, completion: @escaping (Bool, ArtistList?) -> Void)
+    func searchArtist(url: URL, completion: @escaping (Result<ArtistList,ServiceError>) -> Void)
 }
 
 protocol TrackRequester {
@@ -22,5 +22,5 @@ protocol AlbumRequester {
 }
 
 protocol PreviewRequester {
-    func getAudioFile(url: URL, completion: @escaping (Result<URL,Error>) -> Void)
+    func getAudioFile(url: URL, completion: @escaping (Result<URL,ServiceError>) -> Void)
 }

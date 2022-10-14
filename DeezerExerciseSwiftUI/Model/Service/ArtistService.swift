@@ -21,7 +21,7 @@ class ArtistService: ArtistRequester {
         
     }
     
-    func searchArtist(url: URL, completion: @escaping (Bool, ArtistList?) -> Void) {
+    func searchArtist(url: URL, completion: @escaping (Result<ArtistList,ServiceError>) -> Void) {
         
         let request = URLRequest(url: url)
         
@@ -33,21 +33,21 @@ class ArtistService: ArtistRequester {
                 
                 guard let data = data, error == nil else {
                     print ("ERROR: \(String(describing: error?.localizedDescription))")
-                    completion (false, nil)
+                    completion (.failure(.DataException("No Data, please check your Internet connection") ) )
                     return
                 }
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     print ("ERROR: \(String(describing: response))")
-                    completion (false, nil)
+                    completion (.failure(.QueryException("Bad server response, please try again") ) )
                     return
                 }
                 guard let result = try? JSONDecoder().decode(ArtistList.self, from: data) else {
                     print("JSON ERROR: \(String(describing: error?.localizedDescription))")
-                    completion (false, nil)
+                    completion (.failure(.JSONException("An error occured, please try again") ) )
                     return
                 }
                 
-                completion (true, result)
+                completion (.success(result) )
             }
             
         }

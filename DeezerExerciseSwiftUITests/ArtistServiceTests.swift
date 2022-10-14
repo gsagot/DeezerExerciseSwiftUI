@@ -53,13 +53,19 @@ class ArtistServiceTests: XCTestCase {
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        apiService.searchArtist(url: URL(string: "https://api.deezer.com")! ){ success, artists in
+        apiService.searchArtist(url: URL(string: "https://api.deezer.com")! ){ result in
             
-        // THEN
-            XCTAssertFalse(success)
-            XCTAssertNil(artists)
+            // THEN
+            switch result {
+                
+            case .success(_):
+                break
+            case .failure(let error):
+                XCTAssertEqual(error, .DataException("No Data, please check your Internet connection") )
+            }
             expectation.fulfill()
         }
+            
         wait(for: [expectation], timeout: 1)
  
     }
@@ -82,11 +88,17 @@ class ArtistServiceTests: XCTestCase {
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        apiService.searchArtist(url: URL(string: "https://api.deezer.com")! ){ success, artists in
+        apiService.searchArtist(url: URL(string: "https://api.deezer.com")! ){ result in
             
         // THEN
-            XCTAssertFalse(success)
-            XCTAssertNil(artists)
+            switch result {
+                
+            case .success(_):
+                break
+            case .failure(let error):
+                XCTAssertEqual(error, .DataException("No Data, please check your Internet connection") )
+                
+            }
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
@@ -111,11 +123,16 @@ class ArtistServiceTests: XCTestCase {
         
         // WHEN
         let expectation = XCTestExpectation(description: "Wait for queue change.")
-        apiService.searchArtist(url: URL(string: "https://api.deezer.com")! ){ success, artists in
+        apiService.searchArtist(url: URL(string: "https://api.deezer.com")! ){ result in
             
         // THEN
-            XCTAssertTrue(success)
-            XCTAssert(artists?.searchResult.first?.identifier == 69925)
+            switch result {
+
+            case .success(let artists):
+                XCTAssert(artists.searchResult.first?.identifier == 69925 )
+            case .failure(_):
+                break
+            }
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)

@@ -12,8 +12,6 @@ struct ArtistSearchView: View {
     
     @ObservedObject var viewModel = ArtistsViewModel()
     
-    @State private var animationAmount = 1.0
-    
     @State private var searchText: String = " "
     
     var body: some View {
@@ -23,34 +21,27 @@ struct ArtistSearchView: View {
             ScrollView {
                 
                 if searchText.count < 2 {
-                    ZStack{
-                        Image("vinyle")
-                            .resizable()
-                            .scaledToFill()
-                        VStack{
-                            Text("[deezer]")
-                            Text("api")
-                        }
-                            .onAppear(){
-                                animationAmount += 360
-                            }
-                            .foregroundColor(.pink)
-                            .font(.dzrTitle)
-                            .rotationEffect(Angle(degrees: animationAmount))
-                            .animation(
-                                .linear(duration: 3)
-                                    .repeatForever(autoreverses: false),
-                                value: animationAmount
-                            )
-                        
-                        Circle()
-                            .fill(.black)
-                            .scaleEffect(0.03)
-                    }
-                   
-                    
+                    AnimationView()
+    
                 }else {
-                    ArtistGridView(artists: viewModel.all)
+                    
+                    switch viewModel.state {
+                        
+                    case .idle:
+                        Color.clear
+                        
+                    case .loading:
+                        ProgressView()
+                        
+                    case .failed(let error):
+                        Text((String(describing: error)))
+                            .font(.dzrFootnote)
+                            .foregroundColor(.red)
+                        
+                    case .loaded(let artists):
+                        ArtistGridView(artists: artists)
+                    }
+                    
                 }
                 
             }
