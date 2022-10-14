@@ -7,6 +7,11 @@
 
 import Foundation
 
+
+/**
+ A class to manage album from an artist tracklist on **  http://api.deezer.com **.
+ */
+
 class AlbumsViewModel:ObservableObject {
     
     enum State {
@@ -27,6 +32,12 @@ class AlbumsViewModel:ObservableObject {
     init(requester: TrackRequester = TrackService()) {
         self.apiRequester = requester
     }
+    
+    /**
+     Call this function to get artist tracklist  from ** http://api.deezer.com **.
+     This function call ** selectAlbum(tracks: [Track])-> [Album] ** to get album list from this track list
+     This function updates  **state** class property
+     */
     
     func search(_ url: String) {
         
@@ -49,6 +60,10 @@ class AlbumsViewModel:ObservableObject {
         }
     }
     
+    /**
+     This function get album from tracklist and return an array 
+     */
+    
     func selectAlbum(tracks: [Track])-> [Album] {
         
         var result = [Album]()
@@ -59,14 +74,6 @@ class AlbumsViewModel:ObservableObject {
         let test = NSOrderedSet(array: result).array.map({$0 as! Album})
         
         return Array(test)
-        
-    }
-
-    func printTest() {
-        for album in albums {
-            print("✅", album)
-            print("\n")
-        }
         
     }
      

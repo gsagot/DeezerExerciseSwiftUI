@@ -32,16 +32,21 @@ struct TrackCell: View {
                 .multilineTextAlignment(.leading)
             Spacer()
             
+            // Update Button when audio change
+            
             switch audioPlayer.state {
-                
+
             case .playing :
-                
+                // Not playing this song
                 if listening?.identifier != track.identifier {
                     Text( "▷" )
                 }
+                // Playing this song
                 else {
                     Text( "◻︎" )
                 }
+                
+            // Not playing
             default :
                     Text( "▷" )
                 

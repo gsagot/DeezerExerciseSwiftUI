@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ A class to manage tracks from an album on  ** http://api.deezer.com **.
+ */
+
 class TracksViewModel: ObservableObject {
     
     enum State {
@@ -27,6 +31,12 @@ class TracksViewModel: ObservableObject {
        
     }
     
+    /**
+     Call this function to get all tracks from an album id ** http://api.deezer.com/album/ **.
+     This function needs an id album  to success
+     This function updates  **state** class property.
+     */
+    
     func search(_ id: Int) {
         
         state = .loading
@@ -44,14 +54,6 @@ class TracksViewModel: ObservableObject {
                 self.state = .failed(error)
             }
         }
-    }
-    
-    func printTest() {
-        for i in 0..<all.count {
-            print("✅", i, ". ", all[i].title.removeParentheses())
-            print("\n")
-        }
-        
     }
      
 

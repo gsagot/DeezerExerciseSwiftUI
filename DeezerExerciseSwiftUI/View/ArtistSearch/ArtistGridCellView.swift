@@ -15,6 +15,7 @@ struct ArtistGridCellView: View {
         
         ZStack(alignment: .bottom){
             
+            // Load picture at given url
             AsyncImage(url: URL(string: artist.picture ) ){ phase in
                 
                 switch phase {
@@ -34,6 +35,7 @@ struct ArtistGridCellView: View {
             .frame(width: 150, height: 150)
             .clipShape(Circle())
             
+            // Artist Name over picture
             HStack{
                 Spacer()
                 

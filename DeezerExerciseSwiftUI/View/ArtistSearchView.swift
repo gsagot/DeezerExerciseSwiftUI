@@ -20,10 +20,16 @@ struct ArtistSearchView: View {
             
             ScrollView {
                 
+                // Play welcome animation
+                
                 if searchText.count < 2 {
+                    
                     AnimationView()
-    
+                 
+                    // User is searching ...
                 }else {
+                    
+                    // ... switch between states to update view
                     
                     switch viewModel.state {
                         

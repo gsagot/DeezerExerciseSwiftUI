@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// Basic animation
+
 struct AnimationView: View {
     
     @State var rotation = 1.0

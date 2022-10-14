@@ -9,6 +9,9 @@ import Foundation
 
 import AVFoundation
 
+/**
+ A class to manage audio file from ** http://api.deezer.com **.
+ */
 
 class AudioPlayer: ObservableObject {
     
@@ -38,12 +41,17 @@ class AudioPlayer: ObservableObject {
         
     }
     
+    // When audio player finished playing
     @objc func audioPlayerDidFinishPlaying(sender: Notification) {
         state = .idle
     }
     
+    /**
+     Call this function to get audio file  from  ** http://api.deezer.com **.
+     This function needs *preview* **URL** value.
+     This function updates  **state** class property.
+     */
     
-    // DOWNOLOAD MP3 FILE
     func start (_ string: String) {
         
         state = .loading
@@ -65,17 +73,20 @@ class AudioPlayer: ObservableObject {
         
     }
     
-    // PLAYER STOP
+    /**
+     Call this function to stop current audio player.
+     */
     func stop () {
         state = .idle
         player?.pause()
     }
     
-    // PLAYER START
+    // play the downladed mp3 file
     private func play (url:URL) {
         
         let item = AVPlayerItem(url: url)
         
+        // Need To know when audio player finished playing
         NotificationCenter.default.addObserver(self, selector: #selector(self.audioPlayerDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: item)
         
         player = AVPlayer(playerItem: item)

@@ -21,6 +21,8 @@ class PreviewService : PreviewRequester {
         
     }
     
+    // Get mp3 file
+    
     func getAudioFile (url: URL, completion : @escaping (Result<URL,ServiceError>) -> Void ) {
         
         let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -32,14 +34,20 @@ class PreviewService : PreviewRequester {
         task = session.downloadTask(with: request) { (location, response, error) in
             
             DispatchQueue.main.async {
+                
+                // No data
                 guard let location = location, error == nil else {
                     completion(.failure(.DataException("No Data, please check your Internet connection") ) )
                     return
                 }
+                
+                // Bad response server
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                     completion(.failure(.QueryException("Bad server response, please try again") ) )
                     return
                 }
+                
+                // Move file to application bundle
                 do {
                     try FileManager.default.moveItem(at: location, to: destinationUrl)
                 } catch {

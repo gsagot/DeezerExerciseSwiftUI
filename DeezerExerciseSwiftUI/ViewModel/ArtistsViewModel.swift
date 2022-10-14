@@ -7,6 +7,10 @@
 
 import Foundation
 
+/**
+ A class to manage artist search on ** http://api.deezer.com **.
+ */
+
 class ArtistsViewModel:ObservableObject {
     
     enum State {
@@ -25,6 +29,13 @@ class ArtistsViewModel:ObservableObject {
     init(requester: ArtistRequester = ArtistService()) {
         self.apiRequester = requester
     }
+    
+    /**
+     Call this function to search artist from a string on ** http://api.deezer.com **.
+     This function needs a String value to perform search
+     This function updates  **state** class property
+     
+     */
     
     func search(_ searchText: String ) {
         
@@ -47,6 +58,7 @@ class ArtistsViewModel:ObservableObject {
         }
     }
     
+    // If search is cancelled by user
     func reset() {
         all.removeAll()
     }

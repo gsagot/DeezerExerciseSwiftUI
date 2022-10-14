@@ -8,6 +8,9 @@
 import Foundation
 import SwiftUI
 
+
+// Artist grid
+
 struct ArtistGridView: View {
     
     var artists: [DZRArtist]
@@ -31,17 +34,13 @@ struct ArtistGridView: View {
                     } label: {
                         
                             ArtistGridCellView(artist: artist)
-                            
                         
                         }
                     }
-                
                 }
+        
         NavigationLink(" ", isActive: $openDetails) {
             ArtistDetailView(artist: detail ?? DZRArtist.mock())
         }
-            
-        
-        
     }
 }

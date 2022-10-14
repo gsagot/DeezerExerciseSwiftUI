@@ -16,6 +16,9 @@ struct AlbumTrackList: View {
     @ObservedObject var viewModel = TracksViewModel()
     
     var body: some View {
+        
+        // Create List
+        // Switch between states
 
         switch viewModel.state {
             
@@ -42,25 +45,32 @@ struct AlbumTrackList: View {
                     .foregroundColor(.red)
                 Spacer()
             }
+            
         case .loaded(let tracks):
             List(){
                 ForEach(tracks, id: \.identifier) { track in
 
                     TrackCell(track: track, listening: $selected)
                         .onTapGesture {
+                            // Switch between Audio state
+                            
                             switch AudioPlayer.shared.state {
+                                
                                 
                             case .playing :
                                 
+                                // On tap, If not playing this track, play it !
                                 if selected?.identifier != track.identifier {
                                     AudioPlayer.shared.start(track.preview)
                                     selected = track
                                 }
+                                // On tap, If playing this track, stop it !
                                 else{
                                     AudioPlayer.shared.stop()
                                     selected = nil
                                 }
                                 
+                            // playing anything so play this track
                             default :
                                 AudioPlayer.shared.start(track.preview)
                                 selected = track
