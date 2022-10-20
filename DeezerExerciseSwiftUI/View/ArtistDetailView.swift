@@ -82,6 +82,10 @@ struct ArtistDetailView: View {
                             
                             AlbumHeader(artistName: artist.name, albumTitle: albums[index].title)
                                 .frame(width: geo.frame(in: .global).midX )
+
+                                
+                                
+                                
     
                         }
                     }

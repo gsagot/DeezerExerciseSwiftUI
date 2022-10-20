@@ -16,25 +16,32 @@ struct AlbumHeader: View {
     
     var body: some View {
         HStack{
-            
-            VStack(alignment: .leading ){
-                Text(artistName)
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 0))
-                    .font(.dzrLarge)
-                    .minimumScaleFactor(0.5)
-                    .multilineTextAlignment(.leading)
-                
-                
-                Text(albumTitle.removeParentheses())
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
-                    .font(.dzrTitle)
-                    .minimumScaleFactor(0.5)
-                    .foregroundColor(.pink)
-                    .multilineTextAlignment(.leading)
+            GeometryReader{ geo in
+                VStack(alignment: .leading ){
+                    
+                    Text(artistName)
+                        .font(.dzrLarge)
+                        .minimumScaleFactor(0.1)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.leading)
+                    
+                    
+                    Text(albumTitle.removeParentheses())
+                        .font(.dzrLarge)
+                        .minimumScaleFactor(0.1)
+                        .foregroundColor(.pink)
+                        .multilineTextAlignment(.leading)
+                    
+                    Text("current playing");
+                    Image(systemName: "circle.fill")
+                    Spacer()
+                }
+                .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 0))
                 
             }
             
-            Spacer()
+           
+            
         }
         .frame(maxWidth: .infinity)
         .background(.clear)

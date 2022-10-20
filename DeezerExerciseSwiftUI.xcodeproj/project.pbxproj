@@ -34,8 +34,8 @@
 		CA070F8828F9427700A35DC8 /* FakePreviewResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA070F8728F9427700A35DC8 /* FakePreviewResponseData.swift */; };
 		CA070F8C28F952D100A35DC8 /* c-a1a592f0d70f7e944b088f0070be9342-4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA070F8928F9487900A35DC8 /* c-a1a592f0d70f7e944b088f0070be9342-4.mp3 */; };
 		CA070F8E28F96D5800A35DC8 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA070F8D28F96D5800A35DC8 /* AnimationView.swift */; };
+		CA366FF929004384009D6B64 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA366FF829004384009D6B64 /* Requester.swift */; };
 		CA66A53228F187DF004A6851 /* ArtistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66A53128F187DF004A6851 /* ArtistsViewModel.swift */; };
-		CA66A53928F18A2A004A6851 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66A53828F18A2A004A6851 /* Requester.swift */; };
 		CA66A53B28F18A48004A6851 /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66A53A28F18A48004A6851 /* ArtistService.swift */; };
 		CA66A53E28F1B24A004A6851 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA66A53D28F1B24A004A6851 /* String+Extension.swift */; };
 		CA66A54028F1C3E6004A6851 /* ArtistList.json in Resources */ = {isa = PBXBuildFile; fileRef = CA66A53F28F1C3E6004A6851 /* ArtistList.json */; };
@@ -106,8 +106,8 @@
 		CA070F8728F9427700A35DC8 /* FakePreviewResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePreviewResponseData.swift; sourceTree = "<group>"; };
 		CA070F8928F9487900A35DC8 /* c-a1a592f0d70f7e944b088f0070be9342-4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "c-a1a592f0d70f7e944b088f0070be9342-4.mp3"; sourceTree = "<group>"; };
 		CA070F8D28F96D5800A35DC8 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		CA366FF829004384009D6B64 /* Requester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requester.swift; path = DeezerExerciseSwiftUI/Model/Service/Requester.swift; sourceTree = SOURCE_ROOT; };
 		CA66A53128F187DF004A6851 /* ArtistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewModel.swift; sourceTree = "<group>"; };
-		CA66A53828F18A2A004A6851 /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 		CA66A53A28F18A48004A6851 /* ArtistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		CA66A53D28F1B24A004A6851 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CA66A53F28F1C3E6004A6851 /* ArtistList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ArtistList.json; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		CA070F6728F71D7700A35DC8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				CA66A53828F18A2A004A6851 /* Requester.swift */,
+				CA366FF829004384009D6B64 /* Requester.swift */,
 				CA98AB9A28F469A900A62074 /* ServiceError.swift */,
 				CA66A53A28F18A48004A6851 /* ArtistService.swift */,
 				CA66A54D28F30278004A6851 /* TrackService.swift */,
@@ -494,8 +494,8 @@
 				22B4BDF72756708A005F25D9 /* ArtistSearchView.swift in Sources */,
 				CA98AB9B28F469A900A62074 /* ServiceError.swift in Sources */,
 				CA66A55228F40D88004A6851 /* TracksViewModel.swift in Sources */,
+				CA366FF929004384009D6B64 /* Requester.swift in Sources */,
 				CA66A55428F40E38004A6851 /* AlbumService.swift in Sources */,
-				CA66A53928F18A2A004A6851 /* Requester.swift in Sources */,
 				CA070F6428F6F8AD00A35DC8 /* TrackCell.swift in Sources */,
 				22B4BE1F2756A35E005F25D9 /* ArtistDetailView.swift in Sources */,
 				22B4BDF52756708A005F25D9 /* DeezerExerciseSwiftUIApp.swift in Sources */,

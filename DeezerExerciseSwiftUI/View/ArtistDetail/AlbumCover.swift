@@ -19,12 +19,12 @@ struct AlbumCover: View {
             Image("vinyle")
                 .resizable()
                 .scaledToFill()
-                .scaleEffect(1.6)
+                .scaleEffect(1.4)
             
             Image("clock")
                 .resizable()
                 .scaledToFill()
-                .scaleEffect(1.2)
+                .scaleEffect(1.0)
             
             AsyncImage(url: URL(string: path) ){ phase in
                 switch phase {
@@ -42,7 +42,7 @@ struct AlbumCover: View {
                 
             }
             .clipShape(Circle())
-            .scaleEffect(0.8)
+            .scaleEffect(0.7)
             .background(.clear)
             
             Circle()
