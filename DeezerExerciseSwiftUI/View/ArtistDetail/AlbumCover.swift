@@ -14,7 +14,7 @@ struct AlbumCover: View {
     
     var body: some View {
         
-        ZStack(alignment: .top){
+        ZStack(alignment: .center){
             
             Image("vinyle")
                 .resizable()

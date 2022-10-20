@@ -13,7 +13,7 @@ struct AlbumTrackList: View {
     
     @State private var selected: Track?
  
-    @ObservedObject var viewModel = TracksViewModel()
+    @ObservedObject var viewModel: TracksViewModel
     
     var body: some View {
         
@@ -93,3 +93,8 @@ struct AlbumTrackList: View {
     }
 }
 
+struct AlbumTrackListView_Previews: PreviewProvider {
+    static var previews: some View {
+        AlbumTrackList(current_album: Album.mock(), viewModel: TracksViewModel(requester: AlbumServiceFake() ) )
+    }
+}

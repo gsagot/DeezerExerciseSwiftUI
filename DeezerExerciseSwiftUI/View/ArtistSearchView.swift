@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ArtistSearchView: View {
     
-    @ObservedObject var viewModel = ArtistsViewModel()
+    @ObservedObject var viewModel: ArtistsViewModel
     
     @State private var searchText: String = " "
     
@@ -68,3 +68,8 @@ struct ArtistSearchView: View {
 
 
 
+struct ArtistSearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArtistSearchView(viewModel: ArtistsViewModel(requester: ArtistServiceFake() ) )
+    }
+}

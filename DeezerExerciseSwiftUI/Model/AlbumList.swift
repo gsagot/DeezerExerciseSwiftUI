@@ -34,3 +34,11 @@ struct Album: Codable, Hashable {
 
     
 }
+
+extension Album {
+    static func mock() -> Album {
+        .init(identifier: 1220777, title: "The Best Of Pink Floyd: A Foot In The Door", cover: String(" ") )
+    }
+    
+
+}

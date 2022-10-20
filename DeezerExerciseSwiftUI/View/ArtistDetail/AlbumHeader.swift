@@ -31,9 +31,11 @@ struct AlbumHeader: View {
                         .minimumScaleFactor(0.1)
                         .foregroundColor(.pink)
                         .multilineTextAlignment(.leading)
-                    
-                    Text("current playing");
-                    Image(systemName: "circle.fill")
+            
+                    Text("Now playing : ")
+                    Text("Title song here ")
+                        .foregroundColor(.pink)
+                    Image(systemName: "cellularbars")
                     Spacer()
                 }
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 0))

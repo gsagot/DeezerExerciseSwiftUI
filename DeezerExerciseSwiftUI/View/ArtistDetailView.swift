@@ -12,7 +12,7 @@ struct ArtistDetailView: View {
     
     let artist: DZRArtist
     
-    @ObservedObject var viewModel = AlbumsViewModel()
+    @ObservedObject var viewModel: AlbumsViewModel
     
     @State private var index: Int = 0
     
@@ -94,7 +94,7 @@ struct ArtistDetailView: View {
                     Spacer()
                     
                     // TRACK LIST
-                    AlbumTrackList(current_album: albums[index])
+                    AlbumTrackList(current_album: albums[index], viewModel: TracksViewModel())
                         .background(.clear)
                     
                 }
@@ -128,3 +128,11 @@ struct BackNavigationButton: ViewModifier {
             })
     }
 }
+
+
+struct ArtistDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArtistDetailView(artist: DZRArtist.mock(), viewModel: AlbumsViewModel(requester: TrackServiceFake() ) )
+    }
+}
+

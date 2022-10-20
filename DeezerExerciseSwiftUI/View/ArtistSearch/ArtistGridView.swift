@@ -40,7 +40,7 @@ struct ArtistGridView: View {
                 }
         
         NavigationLink(" ", isActive: $openDetails) {
-            ArtistDetailView(artist: detail ?? DZRArtist.mock())
+            ArtistDetailView(artist: detail ?? DZRArtist.mock(), viewModel: AlbumsViewModel())
         }
     }
 }
