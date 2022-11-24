@@ -72,8 +72,8 @@ class AlbumsViewModel:ObservableObject {
             result.append(track.album)
         }
         let test = NSOrderedSet(array: result).array.map({$0 as! Album})
-        
-        return Array(test)
+
+        return test
         
     }
      
