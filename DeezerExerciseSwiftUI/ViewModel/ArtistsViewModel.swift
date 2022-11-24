@@ -39,9 +39,10 @@ class ArtistsViewModel:ObservableObject {
     
     func search(_ searchText: String ) {
         
-        state = .loading
+        state = .idle
         
         guard searchText.count >= 3 else { return }
+        state = .loading
         
         let requestURL = URL(string: "http://api.deezer.com/search/artist?q=" + searchText)!
         
@@ -56,11 +57,6 @@ class ArtistsViewModel:ObservableObject {
                 
             }
         }
-    }
-    
-    // If search is cancelled by user
-    func reset() {
-        all.removeAll()
     }
     
 }
