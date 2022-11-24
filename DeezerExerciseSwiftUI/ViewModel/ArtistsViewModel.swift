@@ -24,9 +24,9 @@ class ArtistsViewModel:ObservableObject {
     
     private var all = [DZRArtist]()
     
-    private var apiRequester: ArtistRequester
+    private var apiRequester: Requester
     
-    init(requester: ArtistRequester = ArtistService()) {
+    init(requester: Requester = ArtistService()) {
         self.apiRequester = requester
     }
     
@@ -45,7 +45,7 @@ class ArtistsViewModel:ObservableObject {
         
         let requestURL = URL(string: "http://api.deezer.com/search/artist?q=" + searchText)!
         
-        apiRequester.searchArtist(url: requestURL) { result in
+        apiRequester.search(url: requestURL) { (result: Result<ArtistList,ServiceError>)  in
             switch result {
                 
             case .success(let artists) :

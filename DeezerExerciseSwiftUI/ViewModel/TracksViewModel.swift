@@ -24,9 +24,9 @@ class TracksViewModel: ObservableObject {
     
     var all = [Track]()
     
-    private var apiRequester: AlbumRequester
+    private var apiRequester: Requester
     
-    init(requester: AlbumRequester = AlbumService()) {
+    init(requester: Requester = AlbumService()) {
         self.apiRequester = requester
        
     }
@@ -43,7 +43,7 @@ class TracksViewModel: ObservableObject {
                 
         let requestURL = URL(string: "http://api.deezer.com/album/" + String(id) )!
         
-        apiRequester.get(url: requestURL) {result in
+        apiRequester.search(url: requestURL) { (result: Result<AlbumDetail,ServiceError>) in
             switch result {
             case .success(let tracks) :
                 self.all = tracks.tracks.data

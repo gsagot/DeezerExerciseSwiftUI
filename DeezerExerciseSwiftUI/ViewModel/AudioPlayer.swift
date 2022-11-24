@@ -56,7 +56,7 @@ class AudioPlayer: ObservableObject {
         
         state = .loading
         
-        apiRequester.getAudioFile(url: URL(string: string)! ){ result in
+        apiRequester.search(url: URL(string: string)! ){ (result: Result<URL,ServiceError>) in
 
             switch result{
                 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PreviewService : PreviewRequester {
+class PreviewService : Requester {
     
     private var session = URLSession(configuration: .default)
     
@@ -23,7 +23,7 @@ class PreviewService : PreviewRequester {
     
     // Get mp3 file
     
-    func getAudioFile (url: URL, completion : @escaping (Result<URL,ServiceError>) -> Void ) {
+    func search<T:Codable> (url: URL, completion : @escaping (Result<T,ServiceError>) -> Void ) {
         
         let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let destinationUrl = documentsDirectoryURL.appendingPathComponent(url.lastPathComponent)
@@ -53,7 +53,7 @@ class PreviewService : PreviewRequester {
                 } catch {
                     print("File already exists")
                 }
-                completion(.success(destinationUrl))
+                completion(.success(destinationUrl as! T))
             }
         }
         task?.resume()

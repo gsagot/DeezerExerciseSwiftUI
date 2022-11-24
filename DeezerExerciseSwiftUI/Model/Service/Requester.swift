@@ -9,18 +9,7 @@ import Foundation
 
 // MARK: - REQUESTER PROTOCOL
 
-protocol ArtistRequester {
-    func searchArtist(url: URL, completion: @escaping (Result<ArtistList,ServiceError>) -> Void)
+protocol Requester {
+    func search<T:Codable>(url: URL, completion: @escaping (Result<T,ServiceError>) -> Void)
 }
 
-protocol TrackRequester {
-    func get(url: URL, completion: @escaping (Result<TrackList,ServiceError>) -> Void)
-}
-
-protocol AlbumRequester {
-    func get(url: URL, completion: @escaping (Result<AlbumDetail,ServiceError>) -> Void)
-}
-
-protocol PreviewRequester {
-    func getAudioFile(url: URL, completion: @escaping (Result<URL,ServiceError>) -> Void)
-}

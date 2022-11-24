@@ -8,8 +8,9 @@
 import Foundation
 
 
-class TrackService: TrackRequester {
+class TrackService: Requester {
     
+
     private var session = URLSession(configuration: .default)
     
     private var task: URLSessionDataTask?
@@ -24,7 +25,7 @@ class TrackService: TrackRequester {
     
     // Get Artist top tracklist
     
-    func get(url: URL, completion: @escaping (Result<TrackList,ServiceError>) -> Void) {
+    func search<T:Codable>(url: URL, completion: @escaping (Result<T,ServiceError>) -> Void) {
         
         let request = URLRequest(url: url)
         
@@ -49,7 +50,7 @@ class TrackService: TrackRequester {
                 }
                 
                 // Json error
-                guard let result = try? JSONDecoder().decode(TrackList.self, from: data) else {
+                guard let result = try? JSONDecoder().decode(T.self, from: data) else {
                     print("JSON ERROR: \(String(describing: error?.localizedDescription))")
                     completion (.failure(.JSONException("An error occured, please try again") ) )
                     return

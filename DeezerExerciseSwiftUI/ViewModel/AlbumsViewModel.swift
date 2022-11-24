@@ -27,9 +27,9 @@ class AlbumsViewModel:ObservableObject {
 
     private var all = [Track]()
     
-    private var apiRequester: TrackRequester
+    private var apiRequester: Requester
     
-    init(requester: TrackRequester = TrackService()) {
+    init(requester: Requester = TrackService()) {
         self.apiRequester = requester
     }
     
@@ -45,7 +45,7 @@ class AlbumsViewModel:ObservableObject {
         
         let requestURL = URL(string: url)!
         
-        apiRequester.get(url: requestURL) {result in
+        apiRequester.search(url: requestURL) { (result:Result<TrackList,ServiceError>) in
             switch result {
                 
             case .success(let tracks) :
