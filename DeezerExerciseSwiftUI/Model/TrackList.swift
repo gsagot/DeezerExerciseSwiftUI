@@ -18,7 +18,16 @@ struct TrackList: Codable {
  
 }
 
-struct Track: Codable {
+struct Track: Codable, Comparable {
+    
+    static func < (lhs: Track, rhs: Track) -> Bool {
+        return lhs.identifier < rhs.identifier
+    }
+    
+    static func == (lhs: Track, rhs: Track) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+    
     
     let identifier: Int
     let title: String

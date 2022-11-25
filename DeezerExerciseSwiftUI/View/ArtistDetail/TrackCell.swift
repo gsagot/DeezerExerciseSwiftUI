@@ -13,7 +13,7 @@ class UserSettings: ObservableObject {
 }
 
 struct TrackCell: View {
-
+    
     var track: Track
     
     @Binding var listening: Track?
@@ -34,24 +34,23 @@ struct TrackCell: View {
             
             // Update Button when audio change
             
-            switch audioPlayer.state {
-
-            case .playing :
-                // Not playing this song
-                if listening?.identifier != track.identifier {
-                    Text( "▷" )
-                }
-                // Playing this song
-                else {
-                    Text( "◻︎" )
-                }
+            let alreadySelected:Bool = audioPlayer.compare(playing: listening, selected: track)
+            
+            switch (audioPlayer.state , alreadySelected) {
                 
-            // Not playing
+            case (.playing, false) :
+                // Not playing this song
+                Text( "▷" )
+                
+            case (.playing, true) :
+                Text( "◻︎" )
+                
+                // Not playing
             default :
-                    Text( "▷" )
+                Text( "▷" )
                 
             }
-
+            
         }
         .padding(10)
         .background(.clear)
@@ -59,6 +58,6 @@ struct TrackCell: View {
         
         
     }
-
+    
     
 }

@@ -57,18 +57,18 @@ class AudioPlayer: ObservableObject {
         state = .loading
         
         apiRequester.search(url: URL(string: string)! ){ (result: Result<URL,ServiceError>) in
-
+            
             switch result{
                 
             case .success(let url) :
                 self.state = .playing
                 self.play (url: url)
-
+                
             case .failure(let error) :
                 self.state = .failed(error)
                 
             }
-         
+            
         }
         
     }
@@ -90,11 +90,49 @@ class AudioPlayer: ObservableObject {
         NotificationCenter.default.addObserver(self, selector: #selector(self.audioPlayerDidFinishPlaying(sender:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: item)
         
         player = AVPlayer(playerItem: item)
-            
+        
         player!.play()
         
         state = .playing
+        
+    }
     
+    func compare(playing:Track?, selected:Track)->Track?{
+        
+        switch self.state {
+            
+        case .playing :
+            
+            // On tap, If not playing this track, play it !
+            if playing != selected {
+                self.start(selected.preview)
+                return selected
+            }
+            // On tap, If playing this track, stop it !
+            else{
+                self.stop()
+                return nil
+            }
+            
+            // playing anything so play this track
+        default :
+            self.start(selected.preview)
+            return selected
+        }
+        
+    }
+    
+    func compare(playing:Track?, selected:Track)->Bool{
+        
+        // On tap, If not playing this track, play it !
+        if playing != selected {
+            return false
+        }
+        // On tap, If playing this track, stop it !
+        else{
+            return true
+        }
+        
     }
     
     

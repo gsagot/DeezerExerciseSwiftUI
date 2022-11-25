@@ -54,43 +54,18 @@ struct AlbumTrackList: View {
                         .onTapGesture {
                             // Switch between Audio state
                             
-                            switch AudioPlayer.shared.state {
-                                
-                                
-                            case .playing :
-                                
-                                // On tap, If not playing this track, play it !
-                                if selected?.identifier != track.identifier {
-                                    AudioPlayer.shared.start(track.preview)
-                                    selected = track
-                                }
-                                // On tap, If playing this track, stop it !
-                                else{
-                                    AudioPlayer.shared.stop()
-                                    selected = nil
-                                }
-                                
-                            // playing anything so play this track
-                            default :
-                                AudioPlayer.shared.start(track.preview)
-                                selected = track
-                            }
+                            selected = AudioPlayer.shared.compare(playing: selected, selected: track)
 
-                          
                         }
                     
-                    
-                      
                 }
-            
                 
             }
-           
-            
-            
+                 
         }
 
     }
+    
 }
 
 struct AlbumTrackListView_Previews: PreviewProvider {
